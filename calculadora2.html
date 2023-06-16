@@ -2,57 +2,71 @@
 <html lang="es">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="description" content="Calculadora básica">
-    <meta name="keywords" content="Operaciones, básicas">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script>
-    <link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="description" content="Calculadora básica">
+  <meta name="keywords" content="Operaciones, básicas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script>
+  <link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
 
-    <title>Calculadora</title>
+  <title>Calculadora</title>
 </head>
 
 <body>
-    <header class="page-header">
-        <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
-            <i class="fa fa-bars"></i>
-        </a>
-        <div id="navigation-bar" class="nav-bar">
-            <a href="#" onclick="aumTexto()" id="button amptext">Ampliar</a>
-            <a href="#" onclick="cambiaTema()" id="button modo">Modo Oscuro</a>
-            <!-- <a href="#">Interlineado</a>-->
-            <a href="#">Ayuda</a>
+  <header class="page-header">
+    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div id="navigation-bar" class="nav-bar">
+      <a href="#">
+        <div id="id-lupaAum" class="btn-mode lupaAum" onclick="">
+          <i class="fa-solid fa-magnifying-glass-plus"></i>
         </div>
-    </header>
-    <div class="contenedor">
-        <div class="calculadora">
-            <div class="display" id="result"></div>
-            <button class="claro col-2" onclick="clearScreen()">CE</button>
-            <button class="claro" onclick="display('/')">&#247</button>
-
-            <button class="claro" onclick="display('7')">7</button>
-            <button class="claro" onclick="display('8')">8</button>
-            <button class="claro" onclick="display('9')">9</button>
-
-            <button class="claro" onclick="display('4')">4</button>
-            <button class="claro" onclick="display('5')">5</button>
-            <button class="claro" onclick="display('6')">6</button>
-            <button class="claro" onclick="display('*')">x</button>
-
-
-            <button class="claro" onclick="display('1')">1</button>
-            <button class="claro" onclick="display('2')">2</button>
-            <button class="claro" onclick="display('3')">3</button>
-            <button class="claro" onclick="display('-')">-</button>
-            <button class="claro row-2" onclick="display('+')">+</button>
-            <button class="claro" onclick="display('.')">,</button>
-            <button class="claro" onclick="display('0')">0</button>
-            <button class="claro col-2" onclick="solve()">=</button>
+        <div id="id-lupaMin" class="btn-mode lupaMin" onclick="">
+          <i class="fa-solid fa-magnifying-glass-minus"></i>
         </div>
-        </article>
-        </section>
-        </main>
-        <script src="funcionesCalc.js"></script>
+      </a>
+      <a href="#">
+        <div id="id-sun" class="btn-mode sun active" onclick="">
+          <i class="fa-solid fa-sun"></i>
+        </div>
+        <div id="id-moon" class="btn-mode moon" onclick="">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+      </a>
+      <a href="#">Interlineado</a>
+      <a href="#">Ayuda</a>
+</div>
+  </header>
+  <div class="contenedor">
+    <div class="calculadora">
+      <div class="display" id="result"></div>
+      <button class="claro col-2" onclick="clearScreen()">CE</button>
+      <button class="claro" onclick="display('/')">&#247</button>
+
+      <button class="claro" onclick="display('7')">7</button>
+      <button class="claro" onclick="display('8')">8</button>
+      <button class="claro" onclick="display('9')">9</button>
+
+      <button class="claro" onclick="display('4')">4</button>
+      <button class="claro" onclick="display('5')">5</button>
+      <button class="claro" onclick="display('6')">6</button>
+      <button class="claro" onclick="display('*')">x</button>
+
+
+      <button class="claro" onclick="display('1')">1</button>
+      <button class="claro" onclick="display('2')">2</button>
+      <button class="claro" onclick="display('3')">3</button>
+      <button class="claro" onclick="display('-')">-</button>
+      <button class="claro row-2" onclick="display('+')">+</button>
+      <button class="claro" onclick="display('.')">,</button>
+      <button class="claro" onclick="display('0')">0</button>
+      <button class="claro col-2" onclick="solve()">=</button>
+    </div>
+    </article>
+    </section>
+    </main>
+    <script src="funcionesCalc.js"></script>
 </body>
 
 </html>

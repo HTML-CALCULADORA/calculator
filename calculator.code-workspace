@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "../../LIA/Curso App web/HTML/cursoWeb"
 		}
 	],
 	"settings": {
