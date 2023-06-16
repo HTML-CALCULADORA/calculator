@@ -19,31 +19,40 @@ function solve() {
         document.documentElement.setAttribute('tema', 'lightnormal');
     }
 } */
+let nombre = document.getElementById('button amptext');
+let nomodo = document.getElementById('button modo')
+let temal = document.querySelector('body');
 function cambiaTema() {
-    let temal = document.querySelector('body');
     let atributo = temal.getAttribute("tema");
     if (atributo == 'lightnormal') {
         temal.setAttribute('tema', 'darknormal');
+        nomodo.innerHTML = 'Modo Claro';
     } else if (atributo == 'lightgrande') {
         temal.setAttribute('tema', 'darkgrande');
+        nomodo.innerHTML = 'Modo Claro';
     } else if (atributo == 'darkgrande') {
         temal.setAttribute('tema', 'lightgrande');
+        nomodo.innerHTML = 'Modo Oscuro';
     } else {
         temal.setAttribute('tema', 'lightnormal');
+        nomodo.innerHTML = 'Modo Oscuro';
     }
 }
 //aumento texto
 function aumTexto() {
-    let temal = document.querySelector('body');
     let atributo = temal.getAttribute("tema");
     if (atributo == 'lightnormal') {
         temal.setAttribute('tema', 'lightgrande');
+        nombre.innerHTML = 'Reducir';
     } else if (atributo == 'darknormal') {
         temal.setAttribute('tema', 'darkgrande');
+        nombre.innerHTML = 'Reducir';
     } else if (atributo == 'darkgrande') {
         temal.setAttribute('tema', 'darknormal');
+        nombre.innerHTML = 'Ampliar';
     } else {
         temal.setAttribute('tema', 'lightnormal');
+        nombre.innerHTML = 'Ampliar';
     }
 }
 /* function aumTexto() {
@@ -58,16 +67,17 @@ function aumTexto() {
         document.documentElement.setAttribute('tema', 'darknormal');
     }
 } */
-function cambiar() {
+/* function cambiar() {
     var boton = document.getElementById('button amptext');
     if (boton.innerHTML == 'Ampliar') {
         boton.innerHTML = 'Reducir';
     }
     else { boton.innerHTML = 'Ampliar'; }
-}
+} */
 /*Menu responsive*/
-function onMenuClick() {
+/* function onMenuClick() {
     var navbar = document.getElementById("navigation-bar");
     var responsive_class_name = "responsive";
     navbar.classList.toggle(responsive_class_name);
-} 
+} */
+
