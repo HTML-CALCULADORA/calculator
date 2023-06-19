@@ -10,52 +10,49 @@
   <link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
   <title>Calculadora</title>
 </head>
-<body>
+
+<body tema="lightnormal">
   <header class="page-header">
     <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
       <i class="fa fa-bars"></i>
     </a>
     <div id="navigation-bar" class="nav-bar">
       <a href="#">
-        <div id="id-lupaMax" class="btn-mode lupaMax" onclick="cambiaTexto('lupaMax')">
+        <div id="id-lupaMax" class="btn-mode lupaMax" onclick="aumTexto()">
           <i class="fa-solid fa-magnifying-glass-plus"></i>
-        </div>
-        <div id="id-lupaMin" class="btn-mode lupaMin active" onclick="cambiaTexto('lupaMin')">
-          <i class="fa-solid fa-magnifying-glass-minus"></i>
         </div>
       </a>
       <a href="#">
-        <div id="id-sun" class="btn-mode sun active" onclick="cambiaTema('sun')">
-          <i class="fa-solid fa-sun"></i>
-        </div>
-        <div id="id-moon" class="btn-mode moon" onclick="cambiaTema('moon')">
+          <div id="id-moon" class="btn-mode moon" onclick="cambiaTema()">
           <i class="fa-solid fa-moon"></i>
         </div>
-      <a href="#">Ayuda</a>
-</div>
+        <a href="#" onclick="abrirAyuda()">Ayuda</a>
+    </div>
   </header>
   <main class="contenedor">
     <section class="calculadora">
       <div class="display" id="result"></div>
-      <button class="col-2" onclick="clearScreen()">CE</button>
-      <button class="operador" onclick="display('/')">&#247</button>
+      <button id="button" class="col-2" onclick="clearScreen()">C</button>
+      <button class="operador" onclick="borrar()">&larr;</button>
+      <button class="operador" value="dividir" onclick="display('/')">/</button>
       <button class="numero" onclick="display('7')">7</button>
       <button class="numero" onclick="display('8')">8</button>
       <button class="numero" onclick="display('9')">9</button>
+      <button class="operador" value="multiplicar" onclick="display('*')">X</button>
       <button class="numero" onclick="display('4')">4</button>
       <button class="numero" onclick="display('5')">5</button>
       <button class="numero" onclick="display('6')">6</button>
-      <button class="operador" onclick="display('*')">x</button>
+      <button class="operador" value="restar" onclick="display('-')">-</button>
       <button class="numero" onclick="display('1')">1</button>
       <button class="numero" onclick="display('2')">2</button>
       <button class="numero" onclick="display('3')">3</button>
-      <button class="operador" onclick="display('-')">-</button>
-      <button class="operador row-2" onclick="display('+')">+</button>
-      <button class="operador" onclick="display('.')">,</button>
-      <button class="numero" onclick="display('0')">0</button>
-      <button class="operador col-2" onclick="solve()">=</button>
+      <button class="operador" value="sumar" onclick="display('+')">+</button>
+      <button class="numero" onclick="display('.')">.</button>
+      <button class="col-2 numero" onclick="display('0')">0</button>
+      <button class="operador" value="igual" onclick="solve()">=</button>
     </section>
-   </main>
-   <script src="funcionesCalc.js"></script>
+  </main>
+  <script src="funcionesCalc.js"></script>
 </body>
+
 </html>
