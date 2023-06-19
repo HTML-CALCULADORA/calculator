@@ -58,7 +58,7 @@ button {
 }
 
 .display{
-  grid-column: 1 / -1;
+  grid-column: 1 / 5;
   display: flex;
   flex:1;
   flex-direction: column;
@@ -137,7 +137,6 @@ main {
   padding: 1.5rem;
   cursor: pointer;
   text-decoration: none;
-  font-size: 1.2rem;
 }
 
 .nav-bar a:hover {
@@ -169,23 +168,21 @@ main {
 }
 
 .btn-mode.sun {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-right: 2px solid black;
+  border-radius: 20px;
+  border: 2px solid var(--color-fuente);
 }
 .btn-mode.moon {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--color-fuente);
 }
 .btn-mode.lupaMax {
-  border-top-left-radius: 20px;
-  border-bottom-left-radius: 20px;
-  border-right: 2px solid black;
+  border-radius: 20px;
+  border: 2px solid var(--color-fuente);
 }
 
 .btn-mode.lupaMin {
-  border-top-right-radius: 20px;
-  border-bottom-right-radius: 20px;
+  border-radius: 20px;
+  border: 2px solid var(--color-fuente);
 }
 
 .active {
