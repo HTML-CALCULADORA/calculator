@@ -86,7 +86,7 @@ button {
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
-  max-height: 100px;
+  max-height: 15vh;
   border: 3px solid var(--color-fuente);
   text-align: right;
   padding: 16px;
@@ -158,7 +158,7 @@ main {
   transition: background-color .5s;
 }
 
-.btn-mode i {
+.btn-mode span {
   display: block;
   font-size: 17px;
   text-align: center;
@@ -176,7 +176,7 @@ main {
 
 .btn-mode.lupaMax {
   border-radius: 20px;
-  border: 2px solid white;
+  border: 2px solid black;
 
 }
 
