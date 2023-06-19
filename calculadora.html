@@ -14,15 +14,15 @@
         <a href="#" id="menu-icon" class="menu-icon" onclick="onMenuClick()">
             <i class="fa fa-bars"></i>
         </a>
-        <div class="nav-bar">
+        <div id="navigation-bar" class="nav-bar">
             <a href="#">
-                <div id="id-lupaMax" onclick="cambiaTexto()">
+                <div id="id-lupaMax" class="btn-mode lupaMax" onclick="cambiaTexto()">
                     <i class="fa-solid fa-magnifying-glass-plus"></i>
                 </div>
             </a>
             <a href="#">
-                <div id="id-sun" onclick="cambiaTema()">
-                    <i class="fa-solid fa-sun"></i>
+                <div id="id-moon" class="btn-mode moon" onclick="cambiaTema()">
+                    <i class="fa-solid fa-moon"></i>
                 </div>
             </a>
             <!-- <a href="#" onclick="aumTexto()" id="button amptext">Ampliar</a>
@@ -31,8 +31,8 @@
             <a href="#">Ayuda</a>
         </div>
     </header>
-    <div class="contenedor">
-        <div class="calculadora">
+    <main class="contenedor">
+        <section class="calculadora">
             <div class="display" id="result">
             </div>
             <button id="button" class="col-2" onclick="clearScreen()">C</button>
@@ -53,8 +53,8 @@
             <button class="numero" onclick="display('.')">.</button>
             <button class="col-2 numero" onclick="display('0')">0</button>
             <button class="operador" value="igual" onclick="solve()">=</button>
-        </div>
-    </div>
+        </section>
+    </main>
     <script src="funcionesCalc.js"></script>
 </body>
 

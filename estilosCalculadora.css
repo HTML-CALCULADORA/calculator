@@ -133,7 +133,7 @@ main {
   cursor: pointer;
   text-decoration: none;
   background-color: var(--color-fondo);
-  color: black;
+  color: var(--color-fuente);
   font-size: var(--font-size);
   padding: 1.5rem;
 }
@@ -148,6 +148,40 @@ main {
   color: var(--color-fuente);
   cursor: pointer;
   display: none;
+}
+
+.btn-mode {
+  display: inline-block;
+  width: 50px;
+  height: 30px;
+  border: 2px solid black;
+  transition: background-color .5s;
+}
+
+.btn-mode i {
+  display: block;
+  font-size: 17px;
+  text-align: center;
+  line-height: 30px;
+}
+
+.btn-mode.sun {
+  border-radius: 20px;
+  border: 2px solid white;
+}
+
+.btn-mode.moon {
+  border-radius: 20px;
+}
+
+.btn-mode.lupaMax {
+  border-radius: 20px;
+  border: 2px solid white;
+
+}
+
+.btn-mode.lupaMin {
+  border-radius: 20px;
 }
 
 @media all and (max-width: 600px) {
