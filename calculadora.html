@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 
 <head>
     <meta charset="UTF-8">
@@ -11,15 +11,25 @@
 
 <body tema="lightnormal">
     <header class="page-header">
-        <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+        <a href="#" id="menu-icon" class="menu-icon" onclick="onMenuClick()">
             <i class="fa fa-bars"></i>
         </a>
-        <div id="navigation-bar" class="nav-bar">
-            <a href="#" onclick="aumTexto()" id="button amptext">Ampliar</a>
-            <a href="#" onclick="cambiaTema()" id="button modo">Modo Oscuro</a>
+        <div class="nav-bar">
+            <a href="#">
+                <div id="id-lupaMax" onclick="cambiaTexto()">
+                    <i class="fa-solid fa-magnifying-glass-plus"></i>
+                </div>
+            </a>
+            <a href="#">
+                <div id="id-sun" onclick="cambiaTema()">
+                    <i class="fa-solid fa-sun"></i>
+                </div>
+            </a>
+            <!-- <a href="#" onclick="aumTexto()" id="button amptext">Ampliar</a>
+            <a href="#" onclick="cambiaTema()" id="button modo">Modo Oscuro</a> -->
             <!-- <a href="#">Interlineado</a>-->
             <a href="#">Ayuda</a>
-
+        </div>
     </header>
     <div class="contenedor">
         <div class="calculadora">
@@ -27,7 +37,7 @@
             </div>
             <button id="button" class="col-2" onclick="clearScreen()">C</button>
             <button class="operador" onclick="borrar()">&larr;</button>
-            <button class="operador" value="dividir">/</button>
+            <button class="operador" value="dividir" onclick="display('/')">/</button>
             <button class="numero" onclick="display('7')">7</button>
             <button class="numero" onclick="display('8')">8</button>
             <button class="numero" onclick="display('9')">9</button>
@@ -40,8 +50,8 @@
             <button class="numero" onclick="display('2')">2</button>
             <button class="numero" onclick="display('3')">3</button>
             <button class="operador" value="sumar" onclick="display('+')">+</button>
-            <button class="col-2 numero" onclick="display('0')">0</button>
             <button class="numero" onclick="display('.')">.</button>
+            <button class="col-2 numero" onclick="display('0')">0</button>
             <button class="operador" value="igual" onclick="solve()">=</button>
         </div>
     </div>
