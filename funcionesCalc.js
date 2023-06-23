@@ -1,15 +1,21 @@
 function display(val) {
-  document.getElementById("result").innerHTML += val;
+  result.innerHTML += val;
 }
 function clearScreen() {
-  document.getElementById("result").innerHTML = "";
+  result.innerHTML = "";
 }
 function solve() {
-  let x = document.getElementById("result").innerHTML;
+  let x = result.innerHTML;
   let y = eval(x);
-  document.getElementById("result").innerHTML = y;
+  result.innerHTML = y;
   return y;
 }
+function borrar() {
+  let borrado = result.innerHTML;
+  borrado = borrado.slice(0, borrado.length - 1);
+  result.innerHTML = borrado;
+}
+
 //modo oscuro
 let nombre = document.getElementById("button amptext");
 let nomodo = document.getElementById("button modo");
