@@ -20,20 +20,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding-top: 10%;
   justify-content: center;
   max-width: 100%;
-  height: 80%;
+  height: 60%;
+  margin-top: 10px;
+  padding-top: 35px;;
   gap: 2%;
-  margin: 2%;
-  padding-top: 10%;
 }
 
 .calculadora {
   display: grid;
+  margin-top: 15px;
   grid-template-columns: repeat(4, 75px);
   grid-template-rows: 160px repeat(5, 75px);
-  padding: 15px;
 }
 button {
   cursor: pointer;
@@ -58,7 +57,7 @@ button {
 }
 
 .display{
-  grid-column: 1 / 5;
+  grid-column: 1 / -1;
   display: flex;
   flex:1;
   flex-direction: column;
@@ -81,9 +80,8 @@ main {
   flex-wrap: wrap-reverse;
   justify-content: center;
   max-width: 100%;
-  height: 80%;
+  height: 60%;
   gap: 2%;
-  margin: 2%;
 }
 
 /*TEMAS WEB*/
@@ -115,28 +113,29 @@ main {
 .page-header {
   background-color: var(--color-fondo);
   color: var(--color-fuente);
-  width: 100%;
-  padding: 1.5rem;
   position: fixed;
   z-index: 10;
   justify-content: space-between;
-  margin: 0;
-  top: 0;
-  text-align: center;
-}
+  margin: 1%;
+  text-align: left;
+  padding: 2%;
+  width: 18%;
+  }
 
 .nav-bar {  margin: 0;}
 
 .nav-bar a {
-  padding: 1.5rem;
+  display: block;
   cursor: pointer;
   text-decoration: none;
   background-color: var(--color-fondo);
   color: var(--color-fuente);
   font-size: var(--font-size);
-  padding: 1.5rem;
   cursor: pointer;
   text-decoration: none;
+  font-size: 1.2rem;
+  padding: 20px;
+  text-align: center;
 }
 
 .nav-bar a:hover {
@@ -153,61 +152,33 @@ main {
 
 /*Boton/enlace modo oscuro y lupa para modo oscuro*/
 .btn-mode {
-  display: inline-block;
+  display: block;
   width: 50px;
   height: 30px;
-  border: 2px solid black;
   transition: background-color .5s;
 }
-
-.btn-mode i {
+.btn-mode span {
   display: block;
-  font-size: 17px;
+  font-size: 30px;
   text-align: center;
   line-height: 30px;
-}
-
-.btn-mode.sun {
-  border-radius: 20px;
-  border: 2px solid var(--color-fuente);
-}
-.btn-mode.moon {
-  border-radius: 20px;
-  border: 2px solid var(--color-fuente);
-}
-.btn-mode.lupaMax {
-  border-radius: 20px;
-  border: 2px solid var(--color-fuente);
-}
-
-.btn-mode.lupaMin {
-  border-radius: 20px;
-  border: 2px solid var(--color-fuente);
-}
-
-.active {
-  background-color: black;
-  color: #ffcd5c !important;
 }
 @media all and (max-width: 600px) {
   .nav-bar {
     display: none;
     position: absolute;
-    top: 3.7rem;
+    top: 2.7rem;
     left: 0;
     width: 100%;
     background-color: var(--bgcolor);
     text-align: center;
   }
-
   .nav-bar.responsive {
     display: block;
   }
-
   .nav-bar a {
     display: block;
   }
-
   .menu-icon {
     display: block;
     z-index: 1;

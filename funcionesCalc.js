@@ -1,56 +1,60 @@
 function display(val) {
-  document.getElementById('result').innerHTML += val;
-}
-function clearScreen() {
-  document.getElementById('result').innerHTML = "";
-}
-function solve() {
-  let x = document.getElementById('result').innerHTML;
-  let y = eval(x);
-  document.getElementById('result').innerHTML = y;
-  return y;
-}
-
-let nombre = document.getElementById('button amptext');
-let nomodo = document.getElementById('button modo')
-let temal = document.querySelector('body');
-function cambiaTema() {
+    document.getElementById('result').innerHTML += val;
+  }
+  function clearScreen() {
+    document.getElementById('result').innerHTML = "";
+  }
+  function solve() {
+    let x = document.getElementById('result').innerHTML;
+    let y = eval(x);
+    document.getElementById('result').innerHTML = y;
+    return y;
+  }
+  //modo oscuro
+  
+  let nombre = document.getElementById('button amptext');
+  let nomodo = document.getElementById('button modo');
+  let texto = document.getElementById('lupa');
+  let modo = document.getElementById('luna');
+  let temal = document.querySelector('body');
+  function cambiaTema() {
     let atributo = temal.getAttribute("tema");
     if (atributo == 'lightnormal') {
         temal.setAttribute('tema', 'darknormal');
-        nomodo.innerHTML = 'Modo Claro';
-        document.getElementById('id-sun').classList.remove('active');
-        document.getElementById('id-moon').classList.add('active');     } else if (atributo == 'lightgrande') {
+        modo.classList.replace('fa-moon', 'fa-sun');
+    } else if (atributo == 'lightgrande') {
         temal.setAttribute('tema', 'darkgrande');
-        nomodo.innerHTML = 'Modo Claro';
+        modo.classList.replace('fa-moon', 'fa-sun');
     } else if (atributo == 'darkgrande') {
         temal.setAttribute('tema', 'lightgrande');
-        nomodo.innerHTML = 'Modo Oscuro';
+        modo.classList.replace('fa-sun', 'fa-moon');
     } else {
         temal.setAttribute('tema', 'lightnormal');
-        nomodo.innerHTML = 'Modo Oscuro';
+        modo.classList.replace('fa-sun', 'fa-moon');
     }
-}
-//aumento texto
-function aumTexto() {
+  }
+  //aumento texto
+  function aumTexto() {
     let atributo = temal.getAttribute("tema");
     if (atributo == 'lightnormal') {
         temal.setAttribute('tema', 'lightgrande');
-        nombre.innerHTML = 'Reducir';
+        texto.classList.replace('fa-magnifying-glass-plus', 'fa-magnifying-glass-minus');
     } else if (atributo == 'darknormal') {
         temal.setAttribute('tema', 'darkgrande');
-        nombre.innerHTML = 'Reducir';
+        texto.classList.replace('fa-magnifying-glass-plus', 'fa-magnifying-glass-minus');
     } else if (atributo == 'darkgrande') {
         temal.setAttribute('tema', 'darknormal');
-        nombre.innerHTML = 'Ampliar';
+        texto.classList.replace('fa-magnifying-glass-minus', 'fa-magnifying-glass-plus');
     } else {
         temal.setAttribute('tema', 'lightnormal');
-        nombre.innerHTML = 'Ampliar';
+        texto.classList.replace('fa-magnifying-glass-minus', 'fa-magnifying-glass-plus');
     }
-}
-/*Funcion para menú responsive*/
-function onMenuClick() {
-  var navbar = document.getElementById("navigation-bar");
-  var responsive_class_name = "responsive";
-  navbar.classList.toggle(responsive_class_name);
-}
+  }
+  /*Menu responsive*/
+  function onMenuClick() {
+    var navbar = document.getElementById("navigation-bar");
+    var responsive_class_name = "responsive";
+    navbar.classList.toggle(responsive_class_name);
+  }
+  
+  
