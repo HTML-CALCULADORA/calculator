@@ -1,14 +1,65 @@
+let ejecucion = document.getElementById('displayScreen');
+
+
 function display(val) {
-    document.getElementById('result').innerHTML += val;
+    if (ejecucion.innerHTML == "ejecutado"){
+        
+        document.getElementById('result').innerHTML = val;
+        
+    }else{
+        let x = document.getElementById('result').innerHTML;
+        if (x==="0"){
+            document.getElementById('result').innerHTML = val;
+            } else{
+            document.getElementById('result').innerHTML += val;
+        }
+    }
+}
+function operar(val) {
+    if (ejecucion.innerHTML == "ejecutado"){
+        document.getElementById('result').innerHTML += val;
+        ejecucion.innerHTML="reiniciado";
+        return;
+    }else{
+        let x = document.getElementById('result').innerHTML;
+        if (x==="0"){
+            document.getElementById('result').innerHTML = val;
+            } else{
+            document.getElementById('result').innerHTML += val;
+        }
+    }
+}
+
+function borrar(){
+    let x = document.getElementById('result').innerHTML;
+    if ( x.length===1 || x==="Error!"){
+        
+        document.getElementById('result').innerHTML = "0" ;
+       
+    } else {
+        let y = x.slice(0,-1);
+    document.getElementById('result').innerHTML = y;
+    }
+}
+function inicio(){
+    document.getElementById('result').innerHTML = "0";
+    
 }
 function clearScreen() {
-    document.getElementById('result').innerHTML = "";
+    document.getElementById('result').innerHTML = "0";
 }
 function solve() {
     let x = document.getElementById('result').innerHTML;
-    let y = eval(x);
-    document.getElementById('result').innerHTML = y;
-    return y;
+    ejecucion.innerHTML="ejecutado";
+    
+        try {
+            let y = eval(x);
+            document.getElementById('result').innerHTML = y;
+            return y;
+        } catch  {
+            document.getElementById('result').innerHTML = "Error!";
+            return
+        }
 }
 //modo oscuro
 /* function cambiaTema() {
