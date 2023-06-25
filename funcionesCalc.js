@@ -14,18 +14,9 @@ function display(val) {
   }
 }
 function operar(val) {
-  if (ejecucion == "ejecutado") {
-    result.innerHTML += val;
-    ejecucion = "reiniciado";
-    return;
-  } else {
-    let x = result.innerHTML;
-    if (x === "0") {
-      result.innerHTML = val;
-    } else {
-      result.innerHTML += val;
-    }
-  }
+  result.innerHTML += val;
+  ejecucion = "reiniciado";
+  return;
 }
 function borrar() {
   let x = result.innerHTML;
