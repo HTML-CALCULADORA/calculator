@@ -2,6 +2,8 @@ let ejecucion = document.getElementById("displayScreen").innerHTML;
 function display(val) {
   if (ejecucion == "ejecutado") {
     result.innerHTML = val;
+    ejecucion = "reiniciado";
+    return;
   } else {
     let x = result.innerHTML;
     if (x === "0") {
