@@ -1,4 +1,59 @@
+let ejecucion = document.getElementById("displayScreen").innerHTML;
 function display(val) {
+  if (ejecucion == "ejecutado") {
+    result.innerHTML = val;
+  } else {
+    let x = result.innerHTML;
+    if (x === "0") {
+      result.innerHTML = val;
+    } else {
+      result.innerHTML += val;
+    }
+  }
+}
+function operar(val) {
+  if (ejecucion == "ejecutado") {
+    result.innerHTML += val;
+    ejecucion = "reiniciado";
+    return;
+  } else {
+    let x = result.innerHTML;
+    if (x === "0") {
+      result.innerHTML = val;
+    } else {
+      result.innerHTML += val;
+    }
+  }
+}
+function borrar() {
+  let x = result.innerHTML;
+  if (x.length === 1 || x === "Error!") {
+    result.innerHTML = "0";
+  } else {
+    let y = x.slice(0, -1);
+    result.innerHTML = y;
+  }
+}
+function inicio() {
+  result.innerHTML = "0";
+}
+function clearScreen() {
+  result.innerHTML = "0";
+}
+function solve() {
+  let x = result.innerHTML;
+  ejecucion = "ejecutado";
+
+  try {
+    let y = eval(x);
+    result.innerHTML = y;
+    return y;
+  } catch {
+    result.innerHTML = "Error!";
+    return;
+  }
+}
+/* function display(val) {
   result.innerHTML += val;
 }
 function clearScreen() {
@@ -14,8 +69,7 @@ function borrar() {
   let borrado = result.innerHTML;
   borrado = borrado.slice(0, borrado.length - 1);
   result.innerHTML = borrado;
-}
-
+} */
 //modo oscuro
 let nombre = document.getElementById("button amptext");
 let nomodo = document.getElementById("button modo");

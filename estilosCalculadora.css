@@ -32,11 +32,12 @@
 html,
 body {
   width: 100%;
-  min-height: 100%;
+  height: 100%;
   font-size: var(--font-size);
   color: var(--color-fuente);
   background-color: var(--color-fondo);
 }
+/* botones de Accesibilidad */
 .page-header {
   position: fixed;
   width: min(70px, 15vw);
@@ -46,6 +47,7 @@ body {
   color: var(--color-fuente);
   background-color: var(--color-fondo);
 }
+/*Botón para menú desplegable en responsive*/
 .menu-icon {
   display: none;
   cursor: pointer;
@@ -56,6 +58,7 @@ body {
   width: 100%;
   height: 100%;
 }
+/*Boton/enlace modo oscuro y lupa para modo oscuro*/
 .nav-bar a {
   display: block;
   margin: 0 auto;
@@ -71,8 +74,6 @@ body {
   background: darkcyan;
   color: #c09b22;
 }
-/*Botón para menú desplegable en responsive*/
-/*Boton/enlace modo oscuro y lupa para modo oscuro*/
 .btn-mode {
   display: block;
   width: 100%;
@@ -116,12 +117,12 @@ main {
   align-items: flex-end;
   margin-bottom: 15px;
   padding: 16px;
+  overflow: hidden;
   border: 2px solid var(--color-fuente);
   border-radius: 180px;
 }
 #result {
   font-size: 30px;
-  overflow: hidden;
   color: var(--color-fuente);
   background-color: var(--color-fondo);
 }
