@@ -3,7 +3,7 @@ let ejecucion = document.getElementById('displayScreen');
 
 function display(val) {
     if (ejecucion.innerHTML == "ejecutado"){
-        
+        ejecucion.innerHTML = "Se debe hacer algo aqui"
         document.getElementById('result').innerHTML = val;
         
     }else{
@@ -18,8 +18,7 @@ function display(val) {
 function operar(val) {
     if (ejecucion.innerHTML == "ejecutado"){
         document.getElementById('result').innerHTML += val;
-        ejecucion.innerHTML="reiniciado";
-        return;
+        
     }else{
         let x = document.getElementById('result').innerHTML;
         if (x==="0"){
@@ -39,8 +38,7 @@ function borrar(){
     } else {
         let y = x.slice(0,-1);
     document.getElementById('result').innerHTML = y;
-    }
-}
+    }}
 function inicio(){
     document.getElementById('result').innerHTML = "0";
     
