@@ -4,12 +4,14 @@
 <head>
     <meta charset="UTF-8">
     <title>Calculadora</title>
-    <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script>
+    <meta name="viewport" content="width= device-width, initial-scale= 1.0">
+    <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous">
+    </script>
     <link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
 
 </head>
 
-<body tema="lightnormal">
+<body tema="lightnormal" onload="inicio()">
     <header class="page-header">
         <a href="#" id="menu-icon" class="menu-icon" onclick="onMenuClick()">
             <span class="fa fa-bars"></span>
@@ -25,34 +27,48 @@
                     <span id="luna" class="fa-solid fa-moon"></span>
                 </div>
             </a>
-            <!-- <a href="#" onclick="aumTexto()" id="button amptext">Ampliar</a>
-            <a href="#" onclick="cambiaTema()" id="button modo">Modo Oscuro</a> -->
-            <!-- <a href="#">Interlineado</a>-->
-            <a href="#">Ayuda</a>
+            <a href="#">
+                <div id="id-help" class="btn-mode help" onclick="info()">
+                    <span class="fa-solid fa-circle-info"></span>
+                </div>
+            </a>
         </div>
     </header>
     <main class="contenedor">
         <section class="calculadora">
             <div class="display" id="result">
+                <div id="displayScreen"></div>
             </div>
             <button id="button" class="col-2" onclick="clearScreen()">C</button>
-            <button class="operador" onclick="borrar()">&larr;</button>
-            <button class="operador" value="dividir" onclick="display('/')">/</button>
+            <button class="operador" onclick="borrar()">
+                <i class="fa-solid fa-delete-left"></i>
+            </button>
+            <button class="operador" value="dividir" onclick="operar('/')">
+                <i class="fa-solid fa-divide"></i>
+            </button>
             <button class="numero" onclick="display('7')">7</button>
             <button class="numero" onclick="display('8')">8</button>
             <button class="numero" onclick="display('9')">9</button>
-            <button class="operador" value="multiplicar" onclick="display('*')">X</button>
+            <button class="operador" value="multiplicar" onclick="operar('*')">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
             <button class="numero" onclick="display('4')">4</button>
             <button class="numero" onclick="display('5')">5</button>
             <button class="numero" onclick="display('6')">6</button>
-            <button class="operador" value="restar" onclick="display('-')">-</button>
+            <button class="operador" value="restar" onclick="operar('-')">
+                <i class="fa-solid fa-minus"></i>
+            </button>
             <button class="numero" onclick="display('1')">1</button>
             <button class="numero" onclick="display('2')">2</button>
             <button class="numero" onclick="display('3')">3</button>
-            <button class="operador" value="sumar" onclick="display('+')">+</button>
-            <button class="numero" onclick="display('.')">.</button>
+            <button class="operador" value="sumar" onclick="operar('+')">
+                <i class="fa-solid fa-plus"></i>
+            </button>
             <button class="col-2 numero" onclick="display('0')">0</button>
-            <button class="operador" value="igual" onclick="solve()">=</button>
+            <button class="numero" onclick="operar(',')">,</button>
+            <button class="operador" value="igual" onclick="solve()">
+                <i class="fa-solid fa-equals"></i>
+            </button>
         </section>
     </main>
     <script src="funcionesCalc.js"></script>

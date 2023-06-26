@@ -1,85 +1,122 @@
+let ejecucion = document.getElementById("displayScreen").innerHTML;
 function display(val) {
-    document.getElementById('result').innerHTML += val;
+  if (ejecucion == "ejecutado") {
+    result.innerHTML = val;
+    ejecucion = "reiniciado";
+    return;
+  } else {
+    let x = result.innerHTML;
+    if (x === "0") {
+      result.innerHTML = val;
+    } else {
+      result.innerHTML += val;
+    }
+  }
+}
+function operar(val) {
+  result.innerHTML += val;
+  ejecucion = "reiniciado";
+  return;
+}
+function borrar() {
+  let x = result.innerHTML;
+  if (x.length === 1 || x === "Error!") {
+    result.innerHTML = "0";
+  } else {
+    let y = x.slice(0, -1);
+    result.innerHTML = y;
+  }
+}
+function inicio() {
+  result.innerHTML = "0";
 }
 function clearScreen() {
-    document.getElementById('result').innerHTML = "";
+  result.innerHTML = "0";
 }
 function solve() {
-    let x = document.getElementById('result').innerHTML;
+  let x = result.innerHTML;
+  ejecucion = "ejecutado";
+
+  try {
     let y = eval(x);
-    document.getElementById('result').innerHTML = y;
+    result.innerHTML = y;
     return y;
+  } catch {
+    result.innerHTML = "Error!";
+    return;
+  }
 }
-//modo oscuro
-/* function cambiaTema() {
-    alert(tema);
-    if ([tema == 'lightnormal']) {
-        document.documentElement.setAttribute('tema', 'darknormal');
-    } else {
-        document.documentElement.setAttribute('tema', 'lightnormal');
-    }
+/* function display(val) {
+  result.innerHTML += val;
+}
+function clearScreen() {
+  result.innerHTML = "";
+}
+function solve() {
+  let x = result.innerHTML;
+  let y = eval(x);
+  result.innerHTML = y;
+  return y;
+}
+function borrar() {
+  let borrado = result.innerHTML;
+  borrado = borrado.slice(0, borrado.length - 1);
+  result.innerHTML = borrado;
 } */
-let nombre = document.getElementById('button amptext');
-let nomodo = document.getElementById('button modo');
-let texto = document.getElementById('lupa');
-let modo = document.getElementById('luna');
-let temal = document.querySelector('body');
+//modo oscuro
+let nombre = document.getElementById("button amptext");
+let nomodo = document.getElementById("button modo");
+let texto = document.getElementById("lupa");
+let modo = document.getElementById("luna");
+let temal = document.querySelector("body");
 function cambiaTema() {
-    let atributo = temal.getAttribute("tema");
-    if (atributo == 'lightnormal') {
-        temal.setAttribute('tema', 'darknormal');
-        modo.classList.replace('fa-moon', 'fa-sun');
-    } else if (atributo == 'lightgrande') {
-        temal.setAttribute('tema', 'darkgrande');
-        modo.classList.replace('fa-moon', 'fa-sun');
-    } else if (atributo == 'darkgrande') {
-        temal.setAttribute('tema', 'lightgrande');
-        modo.classList.replace('fa-sun', 'fa-moon');
-    } else {
-        temal.setAttribute('tema', 'lightnormal');
-        modo.classList.replace('fa-sun', 'fa-moon');
-    }
+  let atributo = temal.getAttribute("tema");
+  if (atributo == "lightnormal") {
+    temal.setAttribute("tema", "darknormal");
+    modo.classList.replace("fa-moon", "fa-sun");
+  } else if (atributo == "lightgrande") {
+    temal.setAttribute("tema", "darkgrande");
+    modo.classList.replace("fa-moon", "fa-sun");
+  } else if (atributo == "darkgrande") {
+    temal.setAttribute("tema", "lightgrande");
+    modo.classList.replace("fa-sun", "fa-moon");
+  } else {
+    temal.setAttribute("tema", "lightnormal");
+    modo.classList.replace("fa-sun", "fa-moon");
+  }
 }
 //aumento texto
 function aumTexto() {
-    let atributo = temal.getAttribute("tema");
-    if (atributo == 'lightnormal') {
-        temal.setAttribute('tema', 'lightgrande');
-        texto.classList.replace('fa-magnifying-glass-plus', 'fa-magnifying-glass-minus');
-    } else if (atributo == 'darknormal') {
-        temal.setAttribute('tema', 'darkgrande');
-        texto.classList.replace('fa-magnifying-glass-plus', 'fa-magnifying-glass-minus');
-    } else if (atributo == 'darkgrande') {
-        temal.setAttribute('tema', 'darknormal');
-        texto.classList.replace('fa-magnifying-glass-minus', 'fa-magnifying-glass-plus');
-    } else {
-        temal.setAttribute('tema', 'lightnormal');
-        texto.classList.replace('fa-magnifying-glass-minus', 'fa-magnifying-glass-plus');
-    }
+  let atributo = temal.getAttribute("tema");
+  if (atributo == "lightnormal") {
+    temal.setAttribute("tema", "lightgrande");
+    texto.classList.replace(
+      "fa-magnifying-glass-plus",
+      "fa-magnifying-glass-minus"
+    );
+  } else if (atributo == "darknormal") {
+    temal.setAttribute("tema", "darkgrande");
+    texto.classList.replace(
+      "fa-magnifying-glass-plus",
+      "fa-magnifying-glass-minus"
+    );
+  } else if (atributo == "darkgrande") {
+    temal.setAttribute("tema", "darknormal");
+    texto.classList.replace(
+      "fa-magnifying-glass-minus",
+      "fa-magnifying-glass-plus"
+    );
+  } else {
+    temal.setAttribute("tema", "lightnormal");
+    texto.classList.replace(
+      "fa-magnifying-glass-minus",
+      "fa-magnifying-glass-plus"
+    );
+  }
 }
-/* function aumTexto() {
-    if ([tema = "lightnormal"]) {
-        document.documentElement.setAttribute('tema', 'lightgrande');
-    }
-    else if ([tema = "darknormal"]) {
-        alert('2')
-        document.documentElement.setAttribute('tema', 'darkgrande');
-    }
-    else {
-        document.documentElement.setAttribute('tema', 'darknormal');
-    }
-} */
-/* function cambiar() {
-    var boton = document.getElementById('button amptext');
-    if (boton.innerHTML == 'Ampliar') {
-        boton.innerHTML = 'Reducir';
-    }
-    else { boton.innerHTML = 'Ampliar'; }
-} */
 /*Menu responsive*/
 function onMenuClick() {
-    var navbar = document.getElementById("navigation-bar");
-    var responsive_class_name = "responsive";
-    navbar.classList.toggle(responsive_class_name);
+  var navbar = document.getElementById("navigation-bar");
+  var responsive_class_name = "responsive";
+  navbar.classList.toggle(responsive_class_name);
 }
-
