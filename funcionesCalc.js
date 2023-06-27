@@ -14,9 +14,17 @@ function display(val) {
   }
 }
 function operar(val) {
-  result.innerHTML += val;
-  ejecucion = "reiniciado";
-  return;
+  let x = result.innerHTML;
+  console.log(x, x.slice(-1))
+  if (val == "." & x.slice(-1) == "." ){
+    console.log(x.slice(-1), val)
+    return;
+  } else{
+    result.innerHTML += val;
+    ejecucion = "reiniciado";
+    return
+  }
+  
 }
 function borrar() {
   let x = result.innerHTML;
