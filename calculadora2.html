@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Calculadora básica">
+  <meta name="keywords" content="Operaciones, básicas">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script src="https://kit.fontawesome.com/97b8a9d55c.js" crossorigin="anonymous"></script>
+  <link type="text/css" href="estilosCalculadora.css" rel="stylesheet">
+  <title>Calculadora</title>
+</head>
+
+<body tema="lightnormal">
+  <header class="page-header">
+    <a id="menu-icon" class="menu-icon" onclick="onMenuClick()">
+      <i class="fa fa-bars"></i>
+    </a>
+    <div id="navigation-bar" class="nav-bar">
+      <a href="#">
+        <div id="id-lupaMax" class="btn-mode lupaMax" onclick="aumTexto()">
+          <i class="fa-solid fa-magnifying-glass-plus"></i>
+        </div>
+      </a>
+      <a href="#">
+          <div id="id-moon" class="btn-mode moon" onclick="cambiaTema()">
+          <i class="fa-solid fa-moon"></i>
+        </div>
+        <a href="#" onclick="abrirAyuda()">Ayuda</a>
+    </div>
+  </header>
+  <main class="contenedor">
+    <section class="calculadora">
+      <div class="display" id="result"></div>
+      <button id="button" class="col-2" onclick="clearScreen()">C</button>
+      <button class="operador" onclick="borrar()">&larr;</button>
+      <button class="operador" value="dividir" onclick="display('/')">/</button>
+      <button class="numero" onclick="display('7')">7</button>
+      <button class="numero" onclick="display('8')">8</button>
+      <button class="numero" onclick="display('9')">9</button>
+      <button class="operador" value="multiplicar" onclick="display('*')">X</button>
+      <button class="numero" onclick="display('4')">4</button>
+      <button class="numero" onclick="display('5')">5</button>
+      <button class="numero" onclick="display('6')">6</button>
+      <button class="operador" value="restar" onclick="display('-')">-</button>
+      <button class="numero" onclick="display('1')">1</button>
+      <button class="numero" onclick="display('2')">2</button>
+      <button class="numero" onclick="display('3')">3</button>
+      <button class="operador" value="sumar" onclick="display('+')">+</button>
+      <button class="numero" onclick="display('.')">.</button>
+      <button class="col-2 numero" onclick="display('0')">0</button>
+      <button class="operador" value="igual" onclick="solve()">=</button>
+    </section>
+  </main>
+  <script src="funcionesCalc.js"></script>
+</body>
+
+</html>
